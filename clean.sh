@@ -37,6 +37,5 @@ fi
 if [ ! -d "${ROM_DIR}/.repo" ]; then
 echo "Initializing repository..."
 repo init -u "${manifest_url}" -b "${branch}" --depth 1
-trim_darwin
 fi
 source "${my_dir}"/sync.sh
