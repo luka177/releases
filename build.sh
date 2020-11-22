@@ -10,6 +10,7 @@ else
 fi
 source build/envsetup.sh
 source "${my_dir}/config.sh"
+source "${my_dir}/sourceforgeconfig.sh"
 if [ "${official}" == "true" ]; then
     export CUSTOM_BUILD_TYPE="OFFICIAL"
 fi
@@ -46,8 +47,8 @@ if [ -e "${finalzip_path}" ]; then
     echo "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds"
 
   echo "Uploading to Sourceforge"
-    
-    scp "${finalzip_path}" "kiam001@frs.sourceforge.net:/home/frs/project/kiam001-build-roms/jenkins"
+
+    scp "${finalzip_path}" "${sourceforgeuser}@frs.sourceforge.net:/home/frs/project/${sourceforgeprojekt}/${sourceforgefolder}"
 
     echo "Uploading to Github "${release_repo}"
 
@@ -72,13 +73,13 @@ Date: $(env TZ="${timezone}" date)" "${img_path}"
         telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/kiam001-build-roms/files/jenkins/${zip_name}/download")
+Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
 Download recovery: ["recovery.img"]("https://github.com/${release_repo}/releases/download/${tag}/recovery.img")"
     else
         telegram -M "Build completed successfully in $((BUILD_DIFF / 60)) minute(s) and $((BUILD_DIFF % 60)) seconds
 
 Download ROM via Github: ["${zip_name}"]("https://github.com/${release_repo}/releases/download/${tag}/${zip_name}")
-Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/kiam001-build-roms/files/jenkins/${zip_name}/download")"
+Download ROM via Sourceforge: ["${zip_name}"]("https://sourceforge.net/projects/${sourceforgeprojekt}/files/${sourceforgefolder}/${zip_name}/download")
     fi
 curl --data parse_mode=HTML --data chat_id=$TELEGRAM_CHAT --data sticker=CAADBQADGgEAAixuhBPbSa3YLUZ8DBYE --request POST https://api.telegram.org/bot$TELEGRAM_TOKEN/sendSticker
 
