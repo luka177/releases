@@ -23,6 +23,6 @@ jobs:
         function upstream() { for var in cedric-pe+ cedric-havoc cedric-colt; do git checkout $var; git rebase master; git push -f; done; git checkout master; }
         upstream
       env:
-        GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_KEY }}
-        GITHUB_USER: ${{ secrets.GITHUB_USER }}
+        GITHUB_EMAIL: ${{ secrets.EMAIL }}
+        GITHUB_TOKEN: ${{ secrets.KEY }}
+        GITHUB_USER: ${{ secrets.USER }}
