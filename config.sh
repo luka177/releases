@@ -21,7 +21,7 @@ export upload_recovery=""
 export ccache="true"
 export ccache_size="100"
 
-export jenkins="false"
+export jenkins="true"
 
 export release_repo="kiam001/releases"
 
