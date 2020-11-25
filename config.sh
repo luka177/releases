@@ -1,28 +1,28 @@
 #!/bin/bash
 
-export GITHUB_USER=""
-export GITHUB_EMAIL=""
+export GITHUB_USER="kiam001"
+export GITHUB_EMAIL="blablatupfen@gmail.com"
 
-export device=""
+export device="PL2"
 
-export ROM=""
-export ROM_DIR=""
-export ROM_VERSION=""
+export ROM="Pixel Experience"
+export ROM_DIR="${WORKSPACE}/pe11"
+export ROM_VERSION="eleven BETA"
 export official="false"
-export local_manifest_url=""
-export manifest_url=""
-export rom_vendor_name=""
-export branch=""
+export local_manifest_url="https://raw.githubusercontent.com/kiam001/manifests/master/kiam001/plate2.xml"
+export manifest_url="https://github.com/PixelExperience/manifest"
+export rom_vendor_name="aosp"
+export branch="eleven"
 export bacon="bacon"
 export buildtype=""
-export clean=""
+export clean="installclean"
 export upload_recovery=""
 
-export ccache=""
-export ccache_size=""
+export ccache="true"
+export ccache_size="100"
 
-export jenkins="false"
+export jenkins="true"
 
-export release_repo=""
+export release_repo="kiam001/releases"
 
 export timezone="UTC"
