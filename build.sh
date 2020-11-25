@@ -50,7 +50,7 @@ if [ -e "${finalzip_path}" ]; then
 
     scp "${finalzip_path}" "${sourceforgeuser}@frs.sourceforge.net:/home/frs/project/${sourceforgeprojekt}/${sourceforgefolder}"
 
-    echo "Uploading to Github "${release_repo}"
+    echo "Uploading to Github "${release_repo}""
 
     github-release "${release_repo}" "${tag}" "master" "${ROM} for ${device}
 
